@@ -1,8 +1,14 @@
-{
-  "sources_required": true,
-  "pii_redact": ["email", "phone"],
-  "risk_band": {
-    "L1": ["internal"],
-    "L2": ["public-docs", "release-notes", "api-reference", "in-app"]
-  }
-}
+sources_required: true
+pii_redact: ["email", "phone"]
+
+approvals_required:
+  api_and_release_notes: ["pm", "engineering"]
+  kb_major_changes: ["support_lead"]
+
+deprecation_policy:
+  notice_releases: 2
+
+# Toggle strictness (lenient locally, strict in CI)
+hard_fail_missing_source: false
+hard_fail_missing_gates: false
+hard_fail_pii: true

@@ -1,38 +1,25 @@
 [
   {
-    "id": "tip-backup",
-    "feature": "backup",
-    "text": "Use Run Now for immediate backup",
+    "id": "tt-policy-create",
+    "feature": "Backup Policy",
+    "text": "Create your first backup policy\u2014set retention and schedule.",
     "placement": "right",
-    "role_visibility": "admin",
-    "when": "onHover",
-    "variant": "info"
+    "role_visibility": [
+      "TenantAdmin"
+    ],
+    "when": "firstLogin && !hasPolicy",
+    "variant": "A"
   },
   {
-    "id": "tip-restore",
-    "feature": "restore",
-    "text": "Provide full target path",
+    "id": "tt-restore-start",
+    "feature": "Restore",
+    "text": "Restore a file from your latest backup. Use an alternate path to verify integrity.",
     "placement": "bottom",
-    "role_visibility": "admin",
-    "when": "onFocus",
-    "variant": "info"
-  },
-  {
-    "id": "tip-policy",
-    "feature": "policy",
-    "text": "Save policy after validation",
-    "placement": "top",
-    "role_visibility": "admin",
-    "when": "onClick",
-    "variant": "info"
-  },
-  {
-    "id": "tip-dashboard",
-    "feature": "dashboard",
-    "text": "Check metrics for success",
-    "placement": "left",
-    "role_visibility": "admin",
-    "when": "onLoad",
-    "variant": "info"
+    "role_visibility": [
+      "TenantAdmin",
+      "Support"
+    ],
+    "when": "hasBackups && !hasRestore",
+    "variant": "A"
   }
 ]

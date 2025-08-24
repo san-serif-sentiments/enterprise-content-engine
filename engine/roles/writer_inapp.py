@@ -1,32 +1,47 @@
-"""Create in-app guidance artifacts."""
+# engine/roles/writer_inapp.py
 from __future__ import annotations
+import json, logging
 from typing import Dict, Any
-import json
 from . import get_logger
 
-
 def run(context: Dict[str, Any]) -> Dict[str, Any]:
-    """Generate tooltips and walkthrough."""
     logger = get_logger("writer_inapp")
+
     tooltips = [
-        {"id": "tip-backup", "feature": "backup", "text": "Use Run Now for immediate backup", "placement": "right", "role_visibility": "admin", "when": "onHover", "variant": "info"},
-        {"id": "tip-restore", "feature": "restore", "text": "Provide full target path", "placement": "bottom", "role_visibility": "admin", "when": "onFocus", "variant": "info"},
-        {"id": "tip-policy", "feature": "policy", "text": "Save policy after validation", "placement": "top", "role_visibility": "admin", "when": "onClick", "variant": "info"},
-        {"id": "tip-dashboard", "feature": "dashboard", "text": "Check metrics for success", "placement": "left", "role_visibility": "admin", "when": "onLoad", "variant": "info"},
+        {
+            "id": "tt-policy-create",
+            "feature": "Backup Policy",
+            "text": "Create your first backup policy—set retention and schedule.",
+            "placement": "right",
+            "role_visibility": ["TenantAdmin"],
+            "when": "firstLogin && !hasPolicy",
+            "variant": "A"
+        },
+        {
+            "id": "tt-restore-start",
+            "feature": "Restore",
+            "text": "Restore a file from your latest backup. Use an alternate path to verify integrity.",
+            "placement": "bottom",
+            "role_visibility": ["TenantAdmin","Support"],
+            "when": "hasBackups && !hasRestore",
+            "variant": "A"
+        }
     ]
-    tooltips_json = json.dumps(tooltips, ensure_ascii=False, indent=2)
     walkthrough_yaml = (
-        "flow_id: restore-setup\n"
-        "source: intake/inapp/hints.md\n"
+        "flow_id: first-policy-setup\n"
         "steps:\n"
-        "  - id: step1\n"
-        "    text: Configure backup policy\n"
-        "    success_criteria: Policy saved\n"
-        "    when: after-login\n"
-        "  - id: step2\n"
-        "    text: Start first backup\n"
-        "    success_criteria: Job scheduled\n"
-        "    when: policy-complete\n"
+        "  - id: step-1\n"
+        "    text: Open Backup Policies and select 'Create Policy'.\n"
+        "    success_criteria: policyFormOpened\n"
+        "    when: firstLogin && !hasPolicy\n"
+        "  - id: step-2\n"
+        "    text: Set retention and schedule, then save.\n"
+        "    success_criteria: policySaved\n"
+        "    when: policyFormOpened\n"
     )
+
     logger.info("in-app guidance created")
-    return {"tooltips_json": tooltips_json, "walkthrough_yaml": walkthrough_yaml}
+    return {
+        "tooltips_json": json.dumps(tooltips, indent=2),
+        "walkthrough_yaml": walkthrough_yaml,
+    }

@@ -1,6 +1,15 @@
-{
-  "active_voice": true,
-  "sentence_max": 26,
-  "forbidden": ["we think", "cutting-edge", "in the realm"],
-  "tense": "present"
-}
+active_voice: true
+sentence_max: 24
+forbidden:
+  - "we think"
+  - "cutting-edge"
+  - "in the realm"
+  - "next-gen"
+tense: present
+heading_style: sentence-case
+list_style: bulleted
+audience: external
+examples_required: true        # API/user guides must include an example
+source_required: true          # every MD ends with a 'Source:' line
+pii_redact: ["email", "phone"] # basic PII tokens
+date_format: "YYYY-MM-DD"

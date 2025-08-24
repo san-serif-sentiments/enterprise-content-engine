@@ -1,0 +1,4 @@
+# docs/governance/risk.yml  (primary)
+risk_band:
+  L1: ["internal"]
+  L2: ["public-docs", "release-notes", "api-reference", "in-app"]
