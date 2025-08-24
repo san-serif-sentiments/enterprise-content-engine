@@ -1,0 +1,38 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Druva Backup & Restore API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/v1/backups": {
+      "get": {
+        "summary": "List backups",
+        "parameters": [
+          {"in": "query", "name": "tenantId", "schema": {"type": "string"}}
+        ],
+        "responses": {"200": {"description": "A list of backups"}}
+      }
+    },
+    "/v1/restores": {
+      "post": {
+        "summary": "Start restore",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "backupId": {"type": "string"},
+                  "targetPath": {"type": "string"}
+                }
+              }
+            }
+          }
+        },
+        "responses": {"202": {"description": "Restore initiated"}}
+      }
+    }
+  }
+}
