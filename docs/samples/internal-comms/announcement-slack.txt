@@ -1,0 +1,10 @@
+*Release update — 2025-08-24*
+*TL;DR:*
+• **Backup list & Restore APIs** simplify tenant management and reduce recovery steps.
+• **Restore performance** improved for large objects (≈20% faster on internal benchmarks).
+• Resolved **policy conflict** edge cases during schedule changes.
+
+Links:
+- API Reference: docs/samples/api-reference/reference.md
+- User Guide: docs/samples/user-guide/tenant-admin.md
+- Release Notes: docs/samples/release-notes/2025-08.md

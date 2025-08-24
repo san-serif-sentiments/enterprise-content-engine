@@ -1,17 +1,27 @@
 [
   {
     "id": "tt-policy-create",
+    "version": "1.0",
+    "owner": "docs-team",
     "feature": "Backup Policy",
-    "text": "Create your first backup policy\u2014set retention and schedule.",
+    "text": "Create your first backup policy—set retention and schedule.",
     "placement": "right",
     "role_visibility": [
       "TenantAdmin"
     ],
     "when": "firstLogin && !hasPolicy",
-    "variant": "A"
+    "variant": "A",
+    "measure": {
+      "event": "policyCreated",
+      "success_criteria": "policySaved",
+      "goal": "firstPolicyCreated"
+    },
+    "expires_on": "2025-10-15"
   },
   {
     "id": "tt-restore-start",
+    "version": "1.0",
+    "owner": "docs-team",
     "feature": "Restore",
     "text": "Restore a file from your latest backup. Use an alternate path to verify integrity.",
     "placement": "bottom",
@@ -20,6 +30,50 @@
       "Support"
     ],
     "when": "hasBackups && !hasRestore",
-    "variant": "A"
+    "variant": "A",
+    "measure": {
+      "event": "restoreStarted",
+      "success_criteria": "restoreCompleted",
+      "goal": "firstRestoreCompleted"
+    },
+    "expires_on": "2025-10-15"
+  },
+  {
+    "id": "tt-backup-run-now",
+    "version": "1.0",
+    "owner": "docs-team",
+    "feature": "Backup",
+    "text": "Run your first backup now to validate the policy.",
+    "placement": "top",
+    "role_visibility": [
+      "TenantAdmin"
+    ],
+    "when": "hasPolicy && !hasBackup",
+    "variant": "A",
+    "measure": {
+      "event": "backupStarted",
+      "success_criteria": "backupSucceeded",
+      "goal": "firstBackupSucceeded"
+    },
+    "expires_on": "2025-10-15"
+  },
+  {
+    "id": "tt-policy-verify",
+    "version": "1.0",
+    "owner": "docs-team",
+    "feature": "Backup Policy",
+    "text": "Verify next run time and retention in Policy Summary.",
+    "placement": "right",
+    "role_visibility": [
+      "TenantAdmin"
+    ],
+    "when": "hasPolicy && hasBackup",
+    "variant": "B",
+    "measure": {
+      "event": "policyViewed",
+      "success_criteria": "summaryViewed",
+      "goal": "policyVerified"
+    },
+    "expires_on": "2025-10-15"
   }
 ]

@@ -1,20 +1,28 @@
 ---
-title: Policy conflicts
+title: Backup Policy — Conflict Resolution
 owner: support
 status: active
 tags: [kb, policy]
-last_reviewed: 2025-08-01
+last_reviewed: 2025-08-25
 ---
 ## Symptoms
-Backup policy cannot save due to conflict message.
+- (none)
 
-## Root cause
-Overlapping retention rules.
+## Possible causes
+- (none)
 
 ## Resolution
-Align schedules to avoid overlap.
+- Follow steps in the user guide.
+
+## Verification
+- Confirm files exist at target path and pass integrity checks.
 
 ## Prevention
-Review existing policies before creating new ones.
+- Schedule periodic test restores to validate readiness.
 
-Source: intake/support/feedback.csv
+## References
+- [API Reference](../api-reference/reference.md)
+- [Tenant Admin Guide](../user-guide/tenant-admin.md#restore-data)
+- [Release Notes](../release-notes/2025-08.md#known-issues)
+
+Source: /Users/Shailesh/MYAIAGENTS/enterprise-content-engine/enterprise-content-engine/intake/support/feedback.csv

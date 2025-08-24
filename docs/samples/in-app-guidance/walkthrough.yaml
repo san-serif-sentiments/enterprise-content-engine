@@ -1,10 +1,30 @@
 flow_id: first-policy-setup
+version: '1.0'
+owner: docs-team
+audience:
+  - TenantAdmin
+when: firstLogin && !hasPolicy
 steps:
   - id: step-1
-    text: Open Backup Policies and select 'Create Policy'.
+    text: Open Backup Policies and select Create Policy.
     success_criteria: policyFormOpened
     when: firstLogin && !hasPolicy
   - id: step-2
     text: Set retention and schedule, then save.
     success_criteria: policySaved
     when: policyFormOpened
+  - id: step-3
+    text: Run your first backup to validate the policy.
+    success_criteria: backupSucceeded
+    when: hasPolicy && !hasBackup
+  - id: step-4
+    text: Restore a file to an alternate path to verify data.
+    success_criteria: restoreCompleted
+    when: hasBackup
+metrics:
+  activation_goal: firstPolicyCreated
+  success_events:
+    - policySaved
+    - backupSucceeded
+    - restoreCompleted
+source: intake/tech-docs/brief.md
