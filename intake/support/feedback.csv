@@ -1,4 +1,3 @@
 url,query,ticket_tag,frequency
-/api/backups,"restore failed",restore,12
-/help/restore,"policy conflict",policy,8
-/help/backup,"slow backup",performance,4
+/docs/restore,restore alternate path failed,restore,37
+/docs/backup-policy,retention vs immutability,policy,22

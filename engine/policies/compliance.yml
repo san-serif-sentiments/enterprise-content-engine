@@ -1,8 +1,9 @@
-{
-  "sources_required": true,
-  "pii_redact": ["email", "phone"],
-  "risk_band": {
-    "L1": ["internal"],
-    "L2": ["public-docs", "release-notes", "api-reference", "in-app"]
-  }
-}
+# engine/policies/compliance.yml
+sources_required: true
+pii_redact: ["email", "phone"]
+approvals_required:
+  api_and_release_notes: ["pm", "engineering"]
+  kb_major_changes: ["support_lead"]
+hard_fail_missing_source: false
+hard_fail_missing_gates: false
+hard_fail_pii: true

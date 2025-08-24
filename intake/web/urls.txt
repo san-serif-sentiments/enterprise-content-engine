@@ -1,0 +1,13 @@
+https://www.python.org/
+https://www.djangoproject.com/
+# Core AI vendors
+https://openai.com/research
+https://huggingface.co/blog
+https://ai.google/discover/
+https://deepmind.google/discover
+https://meta.ai/research/publications
+
+# Standards / governance
+https://partnershiponai.org/reports/
+https://www.oecd.org/ai/
+
