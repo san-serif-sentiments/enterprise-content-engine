@@ -1,0 +1,8 @@
+{
+  "sources_required": true,
+  "pii_redact": ["email", "phone"],
+  "risk_band": {
+    "L1": ["internal"],
+    "L2": ["public-docs", "release-notes", "api-reference", "in-app"]
+  }
+}

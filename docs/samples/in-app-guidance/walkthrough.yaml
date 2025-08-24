@@ -1,0 +1,11 @@
+flow_id: restore-setup
+source: intake/inapp/hints.md
+steps:
+  - id: step1
+    text: Configure backup policy
+    success_criteria: Policy saved
+    when: after-login
+  - id: step2
+    text: Start first backup
+    success_criteria: Job scheduled
+    when: policy-complete

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "tip-backup",
+    "feature": "backup",
+    "text": "Use Run Now for immediate backup",
+    "placement": "right",
+    "role_visibility": "admin",
+    "when": "onHover",
+    "variant": "info"
+  },
+  {
+    "id": "tip-restore",
+    "feature": "restore",
+    "text": "Provide full target path",
+    "placement": "bottom",
+    "role_visibility": "admin",
+    "when": "onFocus",
+    "variant": "info"
+  },
+  {
+    "id": "tip-policy",
+    "feature": "policy",
+    "text": "Save policy after validation",
+    "placement": "top",
+    "role_visibility": "admin",
+    "when": "onClick",
+    "variant": "info"
+  },
+  {
+    "id": "tip-dashboard",
+    "feature": "dashboard",
+    "text": "Check metrics for success",
+    "placement": "left",
+    "role_visibility": "admin",
+    "when": "onLoad",
+    "variant": "info"
+  }
+]

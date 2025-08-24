@@ -1,0 +1,6 @@
+{
+  "active_voice": true,
+  "sentence_max": 26,
+  "forbidden": ["we think", "cutting-edge", "in the realm"],
+  "tense": "present"
+}
