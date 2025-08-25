@@ -1,4 +1,3 @@
-
 ---
 title: Agentic Documentation System – Technical Guide  
 archetype: technical-doc  
@@ -250,5 +249,4 @@ url,query,ticket_tag,frequency
 
 2025-08-25
 
-```
 ```
