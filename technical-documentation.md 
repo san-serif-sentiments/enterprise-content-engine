@@ -1,4 +1,3 @@
-
 ---
 title: Agentic Documentation System – Technical Guide
 archetype: technical-doc
@@ -270,14 +269,5 @@ Last Reviewed / Last Updated
 
 2025-08-25
 
----
 
-### Key Fix
-- Removed **inline backticks wrapping whole sections** (`--- title: …`).  
-- Kept fenced blocks only where needed (bash, yaml, csv, tree output).  
-- Everything else is plain Markdown so headers/lists render correctly.  
-
----
-
-Do you want me to also prepare a **linted version** (tested in GitHub Markdown Preview) so you can drop it straight into your repo without risking broken formatting?
 
