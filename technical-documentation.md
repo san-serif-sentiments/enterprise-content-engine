@@ -1,4 +1,4 @@
-````markdown
+
 ---
 title: Agentic Documentation System – Technical Guide  
 archetype: technical-doc  
