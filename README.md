@@ -1,6 +1,6 @@
 # Agentic Documentation Portfolio
 
-Purpose: demonstrate alignment with Druva’s Information Developer role.
+Purpose: demonstrate alignment with current tech stack and AI workflows 
 
 ## What's included
 - API reference, user guide, release notes, KB, in-app guidance
