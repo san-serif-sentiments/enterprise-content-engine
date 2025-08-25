@@ -1,6 +1,6 @@
 # Agentic Documentation Portfolio
 
-Purpose: demonstrate alignment with current tech stack and AI workflows 
+Purpose: demonstrate alignment with current tech stack and AI workflows.
 
 ## What's included
 - API reference, user guide, release notes, KB, in-app guidance
