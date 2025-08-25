@@ -1,4 +1,3 @@
-markdown```
 ---
 title: Agentic Documentation System – Technical Guide
 archetype: technical-doc
@@ -275,3 +274,5 @@ Last Reviewed / Last Updated
 ---
 
 This doc is **generic, technical, and user-facing**. It teaches someone new how to **set up, run, and extend** your code.
+
+---
