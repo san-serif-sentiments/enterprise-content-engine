@@ -1,3 +1,4 @@
+```markdown
 ---
 title: Agentic Documentation System – Technical Guide
 archetype: technical-doc
@@ -38,6 +39,8 @@ This guide helps developers, documentation engineers, and technical communicator
 - GitHub (if you want to run workflows in CI/CD)  
 
 Recommended: set up a **virtual environment**.  
+
+```
 
 ```bash
 python -m venv .venv
